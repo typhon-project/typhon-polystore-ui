@@ -1,11 +1,15 @@
 # base image
-FROM node:12.2.0
+FROM node:12.4.0-alpine
 
 # set working directory
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
+
+RUN apk --no-cache add git
+
+RUN npm config set unsafe-perm true
 
 # install and cache app dependencies
 COPY ["package.json", "/app/package.json"]
