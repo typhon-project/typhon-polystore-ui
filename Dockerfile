@@ -9,6 +9,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 RUN apk --no-cache add git
 
+RUN apk add --no-cache libc6-compat
+
 RUN npm config set unsafe-perm true
 
 # install and cache app dependencies
