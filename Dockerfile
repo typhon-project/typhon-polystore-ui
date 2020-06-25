@@ -1,11 +1,14 @@
 # base image
-FROM node:12.2.0
+FROM node:12.2.0-alpine
 
 # set working directory
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
+
+RUN apk add --no-cache libc6-compat
+RUN apk --no-cache add git
 
 # install and cache app dependencies
 COPY ["package.json", "/app/package.json"]
