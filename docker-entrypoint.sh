@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 set -eo pipefail
-shopt -s nullglob
 
 cd src/environments
 rm environment.prod.ts
