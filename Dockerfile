@@ -15,7 +15,7 @@ RUN npm config set unsafe-perm true
 
 # install and cache app dependencies
 COPY ["package.json", "/app/package.json"]
-RUN npm install && npm install -g @angular/cli@7.3.9
+#RUN npm install && npm install -g @angular/cli@7.3.9
 		
 # add app
 COPY [".","/app"]
