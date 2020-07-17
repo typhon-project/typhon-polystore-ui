@@ -114,6 +114,10 @@ export class ApiService {
     return this.http.post<QueryResponse>(this.getApiPath("/api/query"), query, httpOptions);
   }
 
+  runBatchQuery(query: string): Observable<QueryResponse> {
+    return this.http.post<QueryResponse>(this.getApiPath("/api/preparedupdate"), query, httpOptions);
+  }
+
   getApiStatus(): Observable<boolean> {
     return this.http.get<boolean>(this.getApiPath("/api/status"));
   }

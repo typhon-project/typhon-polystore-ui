@@ -16,9 +16,18 @@ export class QueryComponent implements OnInit {
   ngOnInit() {
   }
 
-  run() {
+  runInsert() {
     this.api.runQuery(this.query)
       .subscribe(response => this.result = response.response);
   }
 
+  runUpdate() {
+    this.api.runQuery(this.query)
+      .subscribe(response => this.result = response.response);
+  }
+
+  runBatch() {
+    this.api.runBatchQuery(this.query)
+      .subscribe(response => this.result = response.response);
+  }
 }

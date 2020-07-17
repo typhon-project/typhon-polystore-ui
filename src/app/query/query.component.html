@@ -2,17 +2,17 @@
   <div class="col-md-6">
     <div>
       <h4>Insert Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+      <button (click)="runInsert()" class="btn btn-success">Run</button>
     </div>
     <textarea [(ngModel)]="query" class="form-control"></textarea>
     <div>
       <h4>Update Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+      <button (click)="runUpdate()" class="btn btn-success">Run</button>
     </div>
     <textarea [(ngModel)]="query" class="form-control"></textarea>
     <div>
       <h4>Batch Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+      <button (click)="runBatch()" class="btn btn-success">Run</button>
     </div>
     <textarea [(ngModel)]="query" class="form-control"></textarea>
   </div>
