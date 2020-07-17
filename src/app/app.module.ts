@@ -6,7 +6,6 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { BackupComponent } from './backup/backup.component';
 import { RestoreComponent } from './restore/restore.component';
@@ -40,7 +39,6 @@ import { ToastrModule } from 'ng6-toastr-notifications';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     MessagesComponent,
     BackupComponent,
     RestoreComponent,

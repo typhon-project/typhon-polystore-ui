@@ -6,5 +6,5 @@
 }
 
 .query-container textarea {
-    height: calc(100% - 40px);
+    height: 200px;
 }

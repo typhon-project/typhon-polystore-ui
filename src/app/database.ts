@@ -1,6 +1,5 @@
 export class Database {
     name: string;
-    status: string;
     dbType: DatabaseType;
 }
 

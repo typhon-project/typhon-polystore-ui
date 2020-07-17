@@ -1,5 +1,5 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 import { Database } from './database';
@@ -78,11 +78,11 @@ export class ApiService {
   }
 
   getMlModels(): Observable<Model[]> {
-    return this.http.get<Model[]>(this.getApiPath("/api/models/ml"));
+    return this.http.get<Model[]>(this.getApiPath("/api/model/ml"));
   }
 
   getDlModels(): Observable<Model[]> {
-    return this.http.get<Model[]>(this.getApiPath("/api/models/dl"));
+    return this.http.get<Model[]>(this.getApiPath("/api/model/dl"));
   }
 
   addDlModel(contents: string): Observable<Model> {
