@@ -110,8 +110,12 @@ export class ApiService {
     });
   }
 
-  runQuery(query: string): Observable<QueryResponse> {
+  runInsertQuery(query: string): Observable<QueryResponse> {
     return this.http.post<QueryResponse>(this.getApiPath("/api/query"), query, httpOptions);
+  }
+
+  runUpdateQuery(query: string): Observable<QueryResponse> {
+    return this.http.post<QueryResponse>(this.getApiPath("/api/update"), query, httpOptions);
   }
 
   runBatchQuery(query: string): Observable<QueryResponse> {

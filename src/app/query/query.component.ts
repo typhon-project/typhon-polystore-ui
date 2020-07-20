@@ -8,7 +8,9 @@ import { ApiService } from '../api.service';
 })
 export class QueryComponent implements OnInit {
 
-  public query: string = '';
+  public insertQuery: string = '';
+  public updateQuery: string = '';
+  public batchQuery: string = '';
   public result: string = '';
 
   constructor(private api: ApiService) { }
@@ -17,17 +19,17 @@ export class QueryComponent implements OnInit {
   }
 
   runInsert() {
-    this.api.runQuery(this.query)
+    this.api.runInsertQuery(this.insertQuery)
       .subscribe(response => this.result = response.response);
   }
 
   runUpdate() {
-    this.api.runQuery(this.query)
+    this.api.runUpdateQuery(this.updateQuery)
       .subscribe(response => this.result = response.response);
   }
 
   runBatch() {
-    this.api.runBatchQuery(this.query)
+    this.api.runBatchQuery(this.batchQuery)
       .subscribe(response => this.result = response.response);
   }
 }
