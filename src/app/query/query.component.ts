@@ -23,7 +23,7 @@ export class QueryComponent implements OnInit {
     .subscribe(response => {
       console.log('runInsertQuery');
       console.log(response);
-      this.result = response
+      this.result = JSON.stringify(response);
     });
   }
 
@@ -32,7 +32,7 @@ export class QueryComponent implements OnInit {
     .subscribe(response => {
       console.log('runUpdateQuery');
       console.log(response);
-      this.result = response
+      this.result = JSON.stringify(response);
     });
   }
 
@@ -41,7 +41,7 @@ export class QueryComponent implements OnInit {
     .subscribe(response => {
       console.log('runBatchQuery');
       console.log(response);
-      this.result = response
+      this.result = JSON.stringify(response);
     });
   }
   
@@ -50,7 +50,7 @@ export class QueryComponent implements OnInit {
     .subscribe(response => {
       console.log('resetDB');
       console.log(response);
-      this.result = response.body
+      this.result = 'Body: ' + response.body + ' Status: ' + response.status;
     });
   }
 }

@@ -111,15 +111,15 @@ export class ApiService {
   }
 
   runInsertQuery(query: string): Observable<any> {
-    return this.http.post<any>(this.getApiPath("/api/query"), query, httpOptions);
+    return this.http.post<any>(this.getApiPath("/api/query"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
   runUpdateQuery(query: string): Observable<any> {
-    return this.http.post<any>(this.getApiPath("/api/update"), query, httpOptions);
+    return this.http.post<any>(this.getApiPath("/api/update"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
   runBatchQuery(query: string): Observable<any> {
-    return this.http.post<any>(this.getApiPath("/api/preparedupdate"), query, httpOptions);
+    return this.http.post<any>(this.getApiPath("/api/preparedupdate"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
   resetDB(): Observable<any> {
