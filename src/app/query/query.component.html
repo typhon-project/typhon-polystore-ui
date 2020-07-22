@@ -1,27 +1,29 @@
 <div class="query-container row">
   <div class="col-md-6">
-    <div>
-      <h4>Insert Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+    <div style="display: flex;margin-bottom: 20px;">
+        <h3>Reset Databases</h3>
+        <button (click)="resetDB()" class="btn btn-success">Reset</button>
     </div>
-    <textarea [(ngModel)]="query" class="form-control"></textarea>
-    <div>
-      <h4>Update Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+    <div style="display: flex;margin-bottom: 20px;">
+      <h3>Insert Query</h3>
+      <button (click)="runInsert()" class="btn btn-success">Run</button>
     </div>
-    <textarea [(ngModel)]="query" class="form-control"></textarea>
-    <div>
-      <h4>Batch Query</h4>
-      <button (click)="run()" class="btn btn-success">Run</button>
+    <textarea [(ngModel)]="insertQuery" class="form-control"></textarea>
+    <div style="display: flex;margin-bottom: 20px;">
+      <h3>Update Query</h3>
+      <button (click)="runUpdate()" class="btn btn-success">Run</button>
     </div>
-    <textarea [(ngModel)]="query" class="form-control"></textarea>
+    <textarea [(ngModel)]="updateQuery" class="form-control"></textarea>
+    <div style="display: flex;margin-bottom: 20px;">
+      <h3>Batch Query</h3>
+      <button (click)="runBatch()" class="btn btn-success">Run</button>
+    </div>
+    <textarea [(ngModel)]="batchQuery" class="form-control"></textarea>
   </div>
 
   <div class="col-md-6">
-    <div class="result">{{ result }}</div>
+    <div>
+      <p>{{result}}</p>
+    </div>
   </div>
 </div>
-
-
-
-
