@@ -1,8 +1,8 @@
 {
-  "name": "angular-io-example",
+  "name": "typhon-polystore-ui",
   "version": "1.0.0",
   "private": true,
-  "description": "Example project from an angular.io guide.",
+  "description": "Typhon Polystore UI",
   "scripts": {
     "lint": "tslint ./src/**/*.ts -t verbose",
     "start": "ng serve",
