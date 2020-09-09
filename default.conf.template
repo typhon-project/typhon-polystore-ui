@@ -4,7 +4,7 @@ upstream polystore_api {
 }
 
 server {
-   listen 80;
+   listen 4200;
    server_name localhost;
 
     location / {
