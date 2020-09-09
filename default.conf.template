@@ -1,4 +1,4 @@
-upstream api {
+upstream polystore_api {
     server ${API_HOST}:${API_PORT};
     keepalive 8;
 }
@@ -24,7 +24,7 @@ server {
       proxy_set_header Host $http_host;
       proxy_set_header X-NginX-Proxy true;
 
-      proxy_pass http://api/;
+      proxy_pass http://polystore_api/api/;
       proxy_redirect off;
     }
 }
