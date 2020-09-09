@@ -1,29 +1,19 @@
-# base image
-FROM node:12.4.0-alpine
+# Build
+FROM node:12.4.0 as builder
 
-# set working directory
 WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-RUN apk --no-cache add git
-
-RUN apk add --no-cache libc6-compat
 
 RUN npm config set unsafe-perm true
 
-# install and cache app dependencies
-COPY ["package.json", "/app/package.json"]
-#RUN npm install && npm install -g @angular/cli@7.3.9
-		
-# add app
-COPY [".","/app"]
+COPY package.json .
+RUN npm install
 
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-RUN ln -s usr/local/bin/docker-entrypoint.sh /
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENV PATH="./node_modules/.bin:$PATH"
 
-# start app
-CMD ["ng","serve","--disableHostCheck=true","--prod=true","--host","0.0.0.0"]
+COPY . ./
+RUN ng build --prod
+
+# Runtime
+FROM nginx
+COPY default.conf.template /etc/nginx/templates/default.conf.template
+COPY --from=builder /app/dist /usr/share/nginx/html

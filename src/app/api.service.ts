@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   getApiPath(path: string) {
-    return 'http://' + environment.api_host + ':' + environment.api_port + path;
+    return `${environment.api_url}${path}`;
   }
 
   login(username: string, password: string): Observable<boolean> {
