@@ -66,15 +66,15 @@ export class ApiService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.getApiPath("/users"));
+    return this.http.get<User[]>(this.getApiPath("/api/users"));
   }
 
   addUser(user: User): Observable<void> {
-    return this.http.post<void>(this.getApiPath("/user/register"), JSON.stringify(user), httpOptions);
+    return this.http.post<void>(this.getApiPath("/api/user/register"), JSON.stringify(user), httpOptions);
   }
 
   updateUser(username: string, user: User): Observable<void> {
-    return this.http.post<void>(this.getApiPath("/user/" + username), JSON.stringify(user), httpOptions);
+    return this.http.post<void>(this.getApiPath(`/api/user/${username}`), JSON.stringify(user), httpOptions);
   }
 
   getMlModels(): Observable<Model[]> {
