@@ -10,7 +10,6 @@ export class QueryComponent implements OnInit {
 
   public insertQuery: string = '';
   public updateQuery: string = '';
-  public batchQuery: string = '';
   public result: string = '';
 
   constructor(private api: ApiService) { }
@@ -31,15 +30,6 @@ export class QueryComponent implements OnInit {
     this.api.runUpdateQuery(this.updateQuery)
     .subscribe(response => {
       console.log('runUpdateQuery');
-      console.log(response);
-      this.result = JSON.stringify(response);
-    });
-  }
-
-  runBatch() {
-    this.api.runBatchQuery(this.batchQuery)
-    .subscribe(response => {
-      console.log('runBatchQuery');
       console.log(response);
       this.result = JSON.stringify(response);
     });

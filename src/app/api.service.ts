@@ -118,10 +118,6 @@ export class ApiService {
     return this.http.post<any>(this.getApiPath("/api/update"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
-  runBatchQuery(query: string): Observable<any> {
-    return this.http.post<any>(this.getApiPath("/api/preparedupdate"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
-  }
-
   resetDB(): Observable<any> {
     return this.http.get<any>(this.getApiPath("/api/resetdatabases"), { observe: 'response' });
   }
