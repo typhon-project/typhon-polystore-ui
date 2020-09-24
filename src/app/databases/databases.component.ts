@@ -27,6 +27,10 @@ export class DatabasesComponent implements OnInit {
         return "../../assets/images/mariadb.png";
       case DatabaseType.MongoDb:
           return "../../assets/images/mongodb.jpg";
+      case DatabaseType.neo4j:
+          return "../../assets/images/neo4j.png";
+      case DatabaseType.MysqlDb:
+          return "../../assets/images/mysqldb.jpg";
     }
   }
 

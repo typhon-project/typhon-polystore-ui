@@ -5,5 +5,7 @@ export class Database {
 
 export enum DatabaseType {
 	MongoDb = "MongoDb",
-	MariaDb = "MariaDb"
+    MariaDb = "MariaDb",
+    MysqlDb = "MysqlDb",
+    neo4j = "neo4j"
 }
