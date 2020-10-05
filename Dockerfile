@@ -19,3 +19,5 @@ COPY docker/proxy.conf /etc/nginx/conf.d/proxy.conf
 COPY docker/default.conf.template /etc/nginx/templates/default.conf.template
 COPY docker/proxy_params.conf /etc/nginx/snippets/proxy_params.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
+ENV API_HOST=typhon-polystore-service
+ENV API_PORT=8080
