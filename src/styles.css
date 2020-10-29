@@ -51,9 +51,11 @@ a, a:hover, a:focus {
 
 .wrapper {
     display: flex;
+    min-height: 100%;
     width: 100%;
     align-items: stretch;
     perspective: 1500px;
+    margin-bottom: -80px;
 }
 
 

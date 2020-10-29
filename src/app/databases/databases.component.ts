@@ -30,7 +30,7 @@ export class DatabasesComponent implements OnInit {
       case DatabaseType.neo4j:
           return "../../assets/images/neo4j.png";
       case DatabaseType.MysqlDb:
-          return "../../assets/images/mysqldb.jpg";
+          return "../../assets/images/mysqldb.png";
       case DatabaseType.cassandra:
           return "../../assets/images/cassandra.png";
     }
