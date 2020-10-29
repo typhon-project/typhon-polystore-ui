@@ -120,10 +120,10 @@ export class ApiService {
       let map = new Map();
       map.set("query",query);
       let jsonQuery = toJson(map);
-      console.log("The new query is: " + jsonQuery);
+      alert("The new query is: " + jsonQuery);
       return this.http.post<any>(this.getApiPath("/api/query"), jsonQuery, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
     }
-    console.log("Not the success you were looking for...");
+    alert("Not the success you were looking for...");
     return this.http.post<any>(this.getApiPath("/api/query"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
@@ -133,10 +133,10 @@ export class ApiService {
       let map = new Map();
       map.set("query",query);
       let jsonQuery = toJson(map);
-      console.log("The new query is: " + jsonQuery);
+      alert("The new query is: " + jsonQuery);
       return this.http.post<any>(this.getApiPath("/api/update"), jsonQuery, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
     }
-    console.log("Not the success you were looking for...");
+    alert("Not the success you were looking for...");
     return this.http.post<any>(this.getApiPath("/api/update"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
