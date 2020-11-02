@@ -115,28 +115,27 @@ export class ApiService {
   }
 
   runInsertQuery(query: string): Observable<any> {
-    //check if query is proper
-    if(query.trim().charAt(0) != "{"){
-      let map = new Map();
-      map.set("query",query);
-      let jsonQuery = toJson(map);
-      alert("The new query is: " + jsonQuery);
-      return this.http.post<any>(this.getApiPath("/api/query"), jsonQuery, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
+    let request = {};
+    try{
+      request = JSON.parse(query);
     }
-    alert("Not the success you were looking for...");
-    return this.http.post<any>(this.getApiPath("/api/query"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
+    catch (error)
+    {
+      request["query"] = query;
+    }
+    return this.http.post<any>(this.getApiPath("/api/query"), request, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
+
   }
 
   runUpdateQuery(query: string): Observable<any> {
-    //check if query is proper
-    if(query.trim().charAt(0) != "{"){
-      let map = new Map();
-      map.set("query",query);
-      let jsonQuery = toJson(map);
-      alert("The new query is: " + jsonQuery);
-      return this.http.post<any>(this.getApiPath("/api/update"), jsonQuery, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
+    let request = {};
+    try{
+      request = JSON.parse(query);
     }
-    alert("Not the success you were looking for...");
+    catch (error)
+    {
+      request["query"] = query;
+    }
     return this.http.post<any>(this.getApiPath("/api/update"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
