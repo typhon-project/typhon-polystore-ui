@@ -136,7 +136,7 @@ export class ApiService {
     {
       request["query"] = query;
     }
-    return this.http.post<any>(this.getApiPath("/api/update"), query, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
+    return this.http.post<any>(this.getApiPath("/api/update"), request, {headers: httpOptions.headers, observe: 'body', responseType: 'json'});
   }
 
   resetDB(): Observable<any> {
