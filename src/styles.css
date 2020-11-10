@@ -1,6 +1,3 @@
-/*
-    DEMO STYLE
-*/
 @import "https://fonts.googleapis.com/css?family=Open+Sans&display=swap";
 
 
@@ -51,15 +48,19 @@ a, a:hover, a:focus {
 
 .wrapper {
     display: flex;
+    flex-direction: column;
     min-height: 100%;
     width: 100%;
     align-items: stretch;
     perspective: 1500px;
-    margin-bottom: -80px;
+    /* margin-bottom: -80px; */
 }
 
 
 #sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 250px;
     max-width: 250px;
     background: #7386D5;
@@ -75,10 +76,12 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
+    height: 88px;
     background: #6d7fcc;
 }
 
 #sidebar ul.components {
+    flex-grow: 20;
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
 }
@@ -150,9 +153,12 @@ a.article, a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* width: 100%; */
+    /* padding: 20px; */
+    min-height: calc(100vh - 80px);
     transition: all 0.3s;
 }
 
